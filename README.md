@@ -1,4 +1,4 @@
-study_gh_naver
+study_gh_naver -> 미팅노트를 readme에 하는게 좋을 것 같아요.
 
 2019년 3월 26일 화요일
 
