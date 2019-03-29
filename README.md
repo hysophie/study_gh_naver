@@ -14,7 +14,7 @@ study_gh_naver -> 미팅노트를 readme에 하는게 좋을 것 같아요.
 
 4. 다음 주 과제
 - 강의 듣기 / Tensorflow 설치 / Tensorflow로 파일에서 데이터 읽어오기 
-(2) 머신러닝의 개념과 용어
+>(2) 머신러닝의 개념과 용어
 (2-1) 기본적인 Machine Learnnig 의 용어와 개념 설명
 (2-2) TensorFlow의 설치및 기본적인 operations (new)
 (lab 04-2) TensorFlow로 파일에서 데이타 읽어오기 (new)
