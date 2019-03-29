@@ -12,7 +12,7 @@ study_gh_naver -> 미팅노트를 readme에 하는게 좋을 것 같아요.
 3. 향후 계획 설정
 - "모두의 딥러닝" 강의로 변경
 
-* 다음 주 과제
+4. 다음 주 과제
 - 강의 듣기 / Tensorflow 설치 / Tensorflow로 파일에서 데이터 읽어오기 
 (2) 머신러닝의 개념과 용어
 (2-1) 기본적인 Machine Learnnig 의 용어와 개념 설명
