@@ -1,4 +1,4 @@
-## (동건)
+## 동건
 문제1: 
 ```
 cost = tf.reduce_sum(tf.square(hypothesis - y_train))
@@ -18,4 +18,3 @@ gradient descent 학습 알고리즘에서 gradient는 한 지점에서 local mi
 X = tf.placeholder(tf.float32, shape=[?,?])
 W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 ```
----
