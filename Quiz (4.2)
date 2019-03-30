@@ -11,6 +11,7 @@ gradient descent 학습 알고리즘에서 gradient는 한 지점에서 local mi
 40명인 한 학급을 대상으로 음악, 미술, 국어, 수학 성적을 통해 EQ(감성지능)을 예측하려고 한다. 
 이 때, X의 shape은 어떤 형태이며 아래의 코드에서 ?에 들어갈 숫자는?
 
-    X = tf.placeholder(tf.float32, shape=[?,?])
+'''
+X = tf.placeholder(tf.float32, shape=[?,?])
 W = tf.Variable(tf.random_normal([?, ?]), name='weight')
-
+'''
