@@ -8,7 +8,7 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
-그렇다면, learning rate은 무엇을 의미하는가?
+그렇다면, desecent와 learning rate은 무엇을 의미하는가?
 
 ---
 문제3:  
