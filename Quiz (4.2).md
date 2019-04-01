@@ -38,4 +38,4 @@ multi-variable linear regression에서 H(x)를 계산할 때는 ( A )를 사용�
 
 ## 지원
 문제1:
-cost function을 최소화하는 코드를 작성하시오. "cost"를 cost function으로 코딩된 변수로
+cost function을 최소화하는 코드를 작성하시오. "cost"를 cost function으로 코딩된 변수로 간주.
