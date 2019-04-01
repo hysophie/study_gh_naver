@@ -49,5 +49,13 @@ cost function을 최소화하는 것은 (A)의 (B)을 찾는 원리와 같다.
 ```
 
 ---
+
 문제3:
 Matrix의 장점을 서술하시오.
+
+---
+문제4:
+(A)와 (B)에 들어갈 숫자를 작성하시오.
+```
+변수의 갯수가 4개, Instance의 갯수가 7인 linear regression의 weight matrix는 (A) by (B)의 matrix이다.
+```
