@@ -57,13 +57,14 @@ cost function을 최소화하는 코드를 작성하시오. "cost"를 cost funct
 ```
 cost function을 최소화하는 것은 (A)의 (B)을 찾는 원리와 같다.
 ```
+---
 
 - 동건) A: cost funtion의 편미분 함수 B: 값이 0이 되는 지점을  
 
----
-
 문제3:
 Matrix의 장점을 서술하시오.
+
+- 동건) 연산을 간단하게 할 수 있다.  
 
 ---
 문제4:
@@ -72,21 +73,34 @@ Matrix의 장점을 서술하시오.
 변수의 갯수가 4개, Instance의 갯수가 7인 linear regression의 weight matrix는 (A) by (B)의 matrix이다.
 ```
 
+- 동건) A=7 B=4
+
 ## 아영
 문제1:
 Linear regression을 tensorflow로 구현할 때 W, b를 실행하기 전 반드시 입력해야 하는 함수는?
+
+- 동건) sess.run(tf.global_variables_initializer())
 
 ---
 문제2:
 3차원 공간에서 cost function을 설계할 때 확인해야 하는 것은?
 
+- 동건) input과 output의 shape 
+
 ---
 문제3:
 matrix에서 instance의 개수(n)는 numpy와 tensorflow에서 각각 어떻게 표시하는가?
 
+- 동건) np.float, tf.float32
+
 ## 정우
 문제 1 :
 Tensorflow mechanism 3단계를 설명해주세요
+
+- 동건)  
+1. graph를 그리기
+2. sess.run을 통해 데이터를 입력하고 학습을 시작하기.
+3. 학습을 하면서 값을 업데이트하고 리턴하기. 
 
 ---
 
@@ -95,10 +109,13 @@ Tensorflow mechanism 3단계를 설명해주세요
 [10, 5] [?, ?] [10, 2]
 ?를 채우고 밑줄 친 4 개의 값이 어떤 것을 뜻하는 지 각각 구하시오 
 
+- 동건) 
+
 ---
 문제 3:
 경사하강법에서 나타날 수 있는 문제점은 무엇인가요
 
+- 동건) local minimum이 여러개 일 수 있다. 
 
 ## 승렬
 문제 1:
