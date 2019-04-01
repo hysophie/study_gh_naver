@@ -35,3 +35,7 @@ Gradient descent algorithm에 대해서 설명하고, gradient descent algorithm
 ```
 multi-variable linear regression에서 H(x)를 계산할 때는 ( A )를 사용하는데, 그 이유는 ( B )가 많을 때 ( A )를 사용하면 계산이 편하기 때문이다.
 ```
+
+## 지원
+문제1:
+cost function을 최소화하는 코드를 작성하시오. "cost"를 cost function으로 코딩된 변수로
