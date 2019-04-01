@@ -5,10 +5,15 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 ````
 위는 선형회귀의 비용함수이다. 코드에서 잘못된 부분을 찾고 그 이유를 설명하시오.  
 
+- 동건) tf.reduce_sum을 tf.reduce_mean으로 바꿔야한다. 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
+
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
 그렇다면, desecent와 learning rate은 무엇을 의미하는가?
+
+- 동건) desecent는 기울기의 반대방향으로 하강한다는 의미이다. 즉 weight를 learning 할 때 '-'가 붙는 것과 대응된다. 
+learning rate은 보폭에 비유할 수 있는데, 기울의 반대방향 만큼 얼마나 갈 지를 정하는 부분으로 '알파'에 해당한다. 
 
 ---
 문제3:  
@@ -18,6 +23,8 @@ gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가�
 X = tf.placeholder(tf.float32, shape=[?,?])
 W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 ```
+
+- 동건) 40,4,4,1
 
 ## 현아
 문제1:  
@@ -121,7 +128,7 @@ Tensorflow mechanism 3단계를 설명해주세요
 문제 1:
 Tensorflow에서 사용되는 placeholder는 무엇인지 설명하시오.
 
-- 동건) 변수 타입을 미리 설정해놓고 필요한 변수를 나중에 받아서 실행시킬 수 있는 것.
+- 동건) 변수 타입을 미리 설정해놓고 필요한 변수를 나중에 받아서 실행시킬 수 있는 것. 특히 인스턴스의 개수를 모를 때 값을 None으로 할당하고 그래프를 먼저 그리면(1단계), sess.run(2단계)에서 feed_dict을 통해 데이터를 주고 학습을 시킬 수 있다.  
 
 문제 2:
 경사하강법을 사용할 때 learning rate를 너무 크거나 너무 작게 설정하면 나타날 수 있는 문제점을 서술하시오.
