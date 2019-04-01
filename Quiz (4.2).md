@@ -59,3 +59,16 @@ Matrix의 장점을 서술하시오.
 ```
 변수의 갯수가 4개, Instance의 갯수가 7인 linear regression의 weight matrix는 (A) by (B)의 matrix이다.
 ```
+
+## 아영
+문제1:
+Linear regression을 tensorflow로 구현할 때 W, b를 실행하기 전 반드시 입력해야 하는 함수는?
+
+---
+문제2:
+3차원 공간에서 cost function을 설계할 때 확인해야 하는 것은?
+
+---
+문제3:
+matrix에서 instance의 개수(n)는 numpy와 tensorflow에서 각각 어떻게 표시하는가?
+
