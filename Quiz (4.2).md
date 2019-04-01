@@ -5,15 +5,15 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 ````
 위는 선형회귀의 비용함수이다. 코드에서 잘못된 부분을 찾고 그 이유를 설명하시오.  
 
-- 동건) tf.reduce_sum을 tf.reduce_mean으로 바꿔야한다. 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
+- 동건) tf.reduce_sum -> tf.reduce_mean 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
 
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
 그렇다면, desecent와 learning rate은 무엇을 의미하는가?
 
-- 동건) desecent는 기울기의 반대방향으로 하강한다는 의미이다. 즉 weight를 learning 할 때 '-'가 붙는 것과 대응된다. 
-learning rate은 보폭에 비유할 수 있는데, 기울의 반대방향 만큼 얼마나 갈 지를 정하는 부분으로 '알파'에 해당한다. 
+- 동건) desecent는 기울기의 반대방향으로 하강한다는 의미이다. 즉 weight를 learning 할 때 gradient앞에 '-'가 붙는 것과 상응된다. 
+learning rate은 보폭에 비유할 수 있는데, 기울의 반대방향으로 얼머만큼 갈 지를 정하는 부분으로 '알파'라고도 한다. 
 
 ---
 문제3:  
