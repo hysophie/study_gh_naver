@@ -100,3 +100,12 @@ Tensorflow mechanism 3단계를 설명해주세요
 경사하강법에서 나타날 수 있는 문제점은 무엇인가요
 
 
+## 승렬
+문제 1:
+Tensorflow에서 사용되는 placeholder는 무엇인지 설명하시오.
+
+문제 2:
+경사하강법을 사용할 때 learning rate를 너무 크거나 너무 작게 설정하면 나타날 수 있는 문제점을 서술하시오.
+
+문제 3:
+loadtext로 csv파일을 읽어오는 것의 단점을 서술하고 queue runner의 장점을 서술하시오.
