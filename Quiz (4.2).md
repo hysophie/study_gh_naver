@@ -25,6 +25,9 @@ W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 ```
 Linear regression에서 어떤 hypothesis가 좋은지를 판단하기 위해 ( A )를 사용하고, ( A )를 구체적인 수식으로 표현하면 ( B )이다. 
 ```
+
+동건) A=RSS B=(1/m)*sigma(y-yhat)*2
+
 ---
 문제2:  
 Gradient descent algorithm에 대해서 설명하고, gradient descent algorithm이 항상 같은 답을 찾아낼 수 있게 하기 위한 조건을 서술하시오.
