@@ -21,9 +21,9 @@ W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 
 ## 현아
 문제1: 
----
-(A)와 (B)에 알맞은 말을 쓰시오.
 ```
+(A)와 (B)에 알맞은 말을 쓰시오.
+````
 Linear regression에서 어떤 hypothesis가 좋은지를 판단하기 위해 ( A )를 사용하고, ( A )를 구체적인 수식으로 표현하면 ( B )이다. 
 
 ---
