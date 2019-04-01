@@ -26,13 +26,13 @@ W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 Linear regression에서 어떤 hypothesis가 좋은지를 판단하기 위해 ( A )를 사용하고, ( A )를 구체적인 수식으로 표현하면 ( B )이다. 
 ```
 
-동건) A=RSS B=(1/m)*sigma(y-yhat)*2
+-동건) A=RSS B=(1/m)*sigma(y-yhat)*2
 
 ---
 문제2:  
 Gradient descent algorithm에 대해서 설명하고, gradient descent algorithm이 항상 같은 답을 찾아낼 수 있게 하기 위한 조건을 서술하시오.  
 
-동건) 목표지점에 이르는 가장 빠른 경사를(gradient)를 찾아 경사의 반대방향(descent)로 학습하는 최적화 알고리즘.  
+-동건) 목표지점에 이르는 가장 빠른 경사를(gradient)를 찾아 경사의 반대방향(descent)로 학습하는 최적화 알고리즘.  
 미분 가능해야하며 하나의 global minimum 이 존재. 
 
 ---
@@ -42,13 +42,13 @@ Gradient descent algorithm에 대해서 설명하고, gradient descent algorithm
 multi-variable linear regression에서 H(x)를 계산할 때는 ( A )를 사용하는데, 그 이유는 ( B )가 많을 때 ( A )를 사용하면 계산이 편하기 때문이다.
 ```
 
-동건) A: matrix B: varible의 수
+-동건) A: matrix B: varible의 수
 
 ## 지원
 문제1:
 cost function을 최소화하는 코드를 작성하시오. "cost"를 cost function으로 코딩된 변수로 간주.
 
-동건) cost = tf.reduce_sum(tf.square(hypothesis - y_train))
+-동건) cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 
 ---
 
@@ -58,7 +58,7 @@ cost function을 최소화하는 코드를 작성하시오. "cost"를 cost funct
 cost function을 최소화하는 것은 (A)의 (B)을 찾는 원리와 같다.
 ```
 
-동건) A: cost funtion의 편미분 함수 B: 값이 0이 되는 지점을  
+-동건) A: cost funtion의 편미분 함수 B: 값이 0이 되는 지점을  
 
 ---
 문제3:
