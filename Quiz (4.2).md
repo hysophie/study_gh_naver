@@ -72,3 +72,19 @@ Linear regression을 tensorflow로 구현할 때 W, b를 실행하기 전 반드
 문제3:
 matrix에서 instance의 개수(n)는 numpy와 tensorflow에서 각각 어떻게 표시하는가?
 
+## 정우
+문제 1 :
+Tensorflow mechanism 3단계를 설명해주세요
+
+---
+
+문제 2:
+	H = X   W
+[10, 5] [?, ?] [10, 2]
+?를 채우고 밑줄 친 4 개의 값이 어떤 것을 뜻하는 지 각각 구하시오 
+
+---
+문제 3:
+경사하강법에서 나타날 수 있는 문제점은 무엇인가요
+
+
