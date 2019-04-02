@@ -30,6 +30,11 @@
 
 ## 스터디3: Linear Regression (4/2화)
 
+#### 논의 내용
+- 퀴즈 풀이
+- 다음주는 퀴즈 풀고 pull request 미리해보기.
+
+#### 다음 주 과제  
 1. 강의 듣기
 - Logistic (Regression) Classification
 - Softmax Regression (Multinomial Logistic Regression)
@@ -37,8 +42,6 @@
 2. 퀴즈
 - 2개 만들어서 금요일 7시까지 제출. 
 
-로지스틱  
-소프트맥스  
 
 2019년 4월 6일 토요일  (딥러닝 세션)  
 ml의 실용과 몇 가지 팁  
