@@ -9,6 +9,9 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 
 - 동건) tf.reduce_sum -> tf.reduce_mean 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
 - 정우) tf.reduce_mean으로 바꿔야합니다. 
+- 승렬) cost = tf.reduce_mean(tf.square(hypothesis - y_train))
+	mean이 아니라 sum으로 하게되면 단순히 전체 오차들의 합일 뿐이다.
+
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
