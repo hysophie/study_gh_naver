@@ -82,7 +82,11 @@ Matrix의 장점을 서술하시오.
 변수의 갯수가 4개, Instance의 갯수가 7인 linear regression의 weight matrix는 (A) by (B)의 matrix이다.
 ```
 
-- 동건) A=4 B=1
+- 동건)  A=4 B=1
+- 지원) 정답 (A)=4 ,(B)=1
+
+
+
 
 ## 아영
 문제1:
