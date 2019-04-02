@@ -6,7 +6,8 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 위는 선형회귀의 비용함수이다. 코드에서 잘못된 부분을 찾고 그 이유를 설명하시오.  
 
 - 동건) tf.reduce_sum -> tf.reduce_mean 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
-
+- 승렬) cost = tf.reduce_mean(tf.square(hypothesis - y_train))
+	mean이 아니라 sum으로 하게되면 단순히 전체 오차들의 합일 뿐이다.
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
