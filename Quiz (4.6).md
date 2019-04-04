@@ -23,6 +23,7 @@ x =
 
 ---
 문제2: softmax classification 문제\
+\
 all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
                                          [1, 3, 4, 3], \
                                          [1, 11, 7, 9]]}) \
