@@ -18,3 +18,12 @@ x =
  
 ---
 
+## 아영
+문제1: logistic (regression) classification의 cost function을 코드로 구현하면? 
+
+---
+문제2: softmax classification에서 등장하는 .arg_max의 기능은?
+
+---
+
+
