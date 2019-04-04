@@ -22,7 +22,8 @@ x =
 문제1: logistic (regression) classification의 cost function을 코드로 구현하면? 
 
 ---
-문제2: all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
+문제2: softmax classification 문제\
+all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
                                          [1, 3, 4, 3], \
                                          [1, 11, 7, 9]]}) \
     print(all, sess.run(tf.arg_max(all, 1)))에서 \
