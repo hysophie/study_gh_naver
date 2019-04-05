@@ -45,7 +45,8 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 값이 변화하는데, 이렇게 변화된 결과 값은 [A] 사이에 있는 값이고, 합치면 [B]이 된다는 특성이 있다
 
 ---
-## 정우
-문제 1 classification을 linear regression으로 진행했을 때의 문제점 2가지는?
+## 승렬
+문제1.logistic classification을 사용하면 좋을 케이스의 예를 3가지 들어보시오(스팸이랑 시험 pass fail 제외).
 
-문제 2 cross entropy의 cost/loss를 구하는 방법은 두가지로 코딩이 가능하다, 두가지를 모두
+---
+문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
