@@ -35,10 +35,13 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
      
 ---
 
-## 정우
-
-문제1: classification을 linear regression으로 진행하면 생기는 문제점 2가지는?
+## 현아
+문제1: hypothesis = tf.sigmoid(tf.matmul(X,w) + b)로 선언했을 때, hypothesis의 값은 0.1, 0.8 등 0~1 사이의 다양한 값을 가질 수 있다.
+이렇게 다양한 hypothesis의 값을 1.0, 0.0이라는 2가지의 값으로 바꾸는 작업을 tensorflow 코드로 표현하시오. 
 
 ---
+문제2: [A]와 [B]에 들어갈 알맞은 말을 쓰시오.\
+\
+logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 값이 변화하는데, 이렇게 변화된 결과 값은 [A] 사이에 있는 값이고, 합치면 [B]이 된다는 특성이 있다
 
-문제2: Cross entropy의 loss/cost는 2가지로 코딩이 가능하다. 두 가지 코드를 모두 쓰세요
+---
