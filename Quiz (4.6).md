@@ -37,8 +37,8 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 
 ## 정우
 
-문제1: classification을 linear regression으로 진행하면 생기는 문제점 2가지를 말하시오
+문제1: classification을 linear regression으로 진행하면 생기는 문제점 2가지는?
 
 ---
 
-문제2: Cross entropy의 loss/cost는 2가지로 코딩이 가능하다. 두 가지 코드를 모두 
+문제2: Cross entropy의 loss/cost는 2가지로 코딩이 가능하다. 두 가지 코드를 모두 쓰세요
