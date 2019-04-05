@@ -7,6 +7,9 @@ cost = tf.reduce_sum(tf.square(hypothesis - y_train))
 
 - 동건) tf.reduce_sum -> tf.reduce_mean 평균이 아닌 합으로 하면 정확도와 상관없이 인스턴스가 증가함에 따라서 비용이 증가한다.
 - 정우) tf.reduce_mean으로 바꿔야합니다. 
+- 승렬) cost = tf.reduce_mean(tf.square(hypothesis - y_train))
+	mean이 아니라 sum으로 하게되면 단순히 전체 오차들의 합일 뿐이다.
+
 ---
 문제2:  
 gradient descent 학습 알고리즘에서 gradient는 local minimum으로 가는 최단 방향을 의미한다고 할 수 있다.  
@@ -33,7 +36,7 @@ W = tf.Variable(tf.random_normal([?, ?]), name='weight')
 Linear regression에서 어떤 hypothesis가 좋은지를 판단하기 위해 ( A )를 사용하고, ( A )를 구체적인 수식으로 표현하면 ( B )이다. 
 ```
 
-- 동건) A=RSS B=(1/m)*sigma(y-yhat)*2
+- 동건) A=MSE B=(1/m)*sigma(y-yhat)*2
 
 ---
 문제2:  
@@ -55,7 +58,7 @@ multi-variable linear regression에서 H(x)를 계산할 때는 ( A )를 사용�
 문제1:
 cost function을 최소화하는 코드를 작성하시오. "cost"를 cost function으로 코딩된 변수로 간주.
 
-- 동건) cost = tf.reduce_sum(tf.square(hypothesis - y_train))
+- 동건) train = tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(cost)
 
 ---
 
@@ -80,7 +83,11 @@ Matrix의 장점을 서술하시오.
 변수의 갯수가 4개, Instance의 갯수가 7인 linear regression의 weight matrix는 (A) by (B)의 matrix이다.
 ```
 
-- 동건) A=7 B=4
+- 동건)  A=4 B=1
+- 지원) 정답 (A)=4 ,(B)=1
+
+
+
 
 ## 아영
 문제1:
@@ -98,7 +105,7 @@ Linear regression을 tensorflow로 구현할 때 W, b를 실행하기 전 반드
 문제3:
 matrix에서 instance의 개수(n)는 numpy와 tensorflow에서 각각 어떻게 표시하는가?
 
-- 동건) np.float, tf.float32
+- 동건) -1, None // np.float, tf.float32
 
 ## 정우
 문제 1 :
@@ -112,11 +119,11 @@ Tensorflow mechanism 3단계를 설명해주세요
 ---
 
 문제 2:
-	H = X   W
-[10, 5] [?, ?] [10, 2]
+	H = XW  
+[10, 1] = [?, ?] [5, 1]  
 ?를 채우고 밑줄 친 4 개의 값이 어떤 것을 뜻하는 지 각각 구하시오 
 
-- 동건) ??
+- 동건) 10,5
 
 ---
 문제 3:
