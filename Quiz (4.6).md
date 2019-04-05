@@ -65,14 +65,17 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
 
+현아) ??????????????????????
+
 ## 정우
 
 문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
 
-현아) 문제1: 
+현아) 직선으로 data를 분류하려고 하는 경우, 직선의 기울기에 따라 정확하게 분류가 안 되는 경우가 발생한다. / classification에서는 0 또는 1의 값이 나와야 하는데, H(x) = Wx + b라는 linear regression의 식의 결과값은 매우 크게 나올 수도 있다.
 
 ---
 
 문제2. cross entropy의 loss와 cost를 구하는 방법은 두가지로 코딩할 수 있습니다 두가지를 모두 
 
-현아) 
+현아) cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))
+???????????????????????
