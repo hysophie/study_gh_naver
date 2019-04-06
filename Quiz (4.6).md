@@ -65,7 +65,7 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
 
-현아) ??????????????????????
+현아) cross entropy는 softmax classifier의 cost function을 설계하는 방법입니다.
 
 ## 정우
 
