@@ -186,11 +186,7 @@ x: [none, 1], o도될듯...?
 문제 2.
 one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
 
-정우)
-n개의 레이블 중 확률이 가장 높은 것을 1로 만들고(hot하게) 나머지는 0으로 표현
-with tf.Session()as sess:
-   a = sess.run(hypothesis, feed_dict = {X: x_data})
-   print(a, sess.run(tf.arg_max(a,1)))
+
 
 승렬) X=tf.placeholder(tf.float32, shape=[None, 2]
 
@@ -213,3 +209,9 @@ print(a, sess.run(tf.arg_max(a, 1)))
 
 지원: softmax 함수에 입력한 예측값이 확률로 표현될 때 one-hot encoding을 거치게 되면 max 값을 기준으로 1과 0으로 구현할 수 있음,
 argmax를 사용하면 됨
+
+정우)
+n개의 레이블 중 확률이 가장 높은 것을 1로 만들고(hot하게) 나머지는 0으로 표현
+with tf.Session()as sess:
+   a = sess.run(hypothesis, feed_dict = {X: x_data})
+   print(a, sess.run(tf.arg_max(a,1)))
