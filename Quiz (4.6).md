@@ -46,7 +46,7 @@ x =
 
 정우)
 cost = -tf.reduce_mean( Y * tf.log(hypothesis) + (1 - Y) * tf.log(1- hypothesis))
-train = tf.train.GradientDescentOptimizer(learning_rate = 0.01).minimize(cost)
+
 
 승렬) cost= tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis)))
 
@@ -84,9 +84,7 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 동건)  tf.cast(hypothesis > 0.5, dtype=tf.float32)
 
 정우)
-with tf.Session()as sess:
-   a = sess.run(hypothesis, feed_dict = {X: x_data})
-   print(a, sess.run(tf.arg_max(a,1)))
+predicted = tf.cast(hypothesis > 0.5, dtype = tf.float32)
 
 승렬) predicted = tf.cast(hypothesis > 0.5, dtype= tf.float32)
 
