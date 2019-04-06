@@ -41,6 +41,8 @@ x =
 
 승렬) (2, 1, 3, 2)
 
+아영:  (2, 1, 3, 2)
+
 ## 아영
 문제1: logistic (regression) classification의 cost function을 코드로 구현하면? 
 
@@ -55,6 +57,8 @@ cost = -tf.reduce_mean( Y * tf.log(hypothesis) + (1 - Y) * tf.log(1- hypothesis)
 승렬) cost= tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis)))
 
 지원: cost=tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis)+(1-Y)*tf.log(1-hypothesis)))
+
+아영: cost = -tf.reduce_mean(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis))
 
 ---
 문제2: softmax classification 문제\
@@ -76,6 +80,8 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 [2 0 1]
 
 승렬) [2 0 1]
+
+
 
 ---
 
