@@ -71,12 +71,15 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 
 문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
 
+- 동건) 연속적인 값이므로 분류기준을 정하기 어렵다. 
 
 ---
 
 문제2. cross entropy의 loss와 cost를 구하는 방법은 두가지로 코딩할 수 있습니다 두가지를 모두 
 
-- 동건)
+- 동건) tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))  
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=logits,labels=tf.stop_gradient([Y_one_hot])))
+
 
 ## 지원
 
