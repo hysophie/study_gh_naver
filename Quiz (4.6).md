@@ -2,6 +2,7 @@
 문제1: log를 쓰지 않고 sigmoid 함수만으로 logistic cost 를 정의할 수 없는 이유는?
 
 승렬) 구불구불해서 global minimum을 찾을수가 없다.
+
 ---
 문제2:
 
@@ -18,12 +19,14 @@ x =
  x의 shape은?
  
  승렬) (2, 1, 3, 2)
+
 ---
 
 ## 아영
 문제1: logistic (regression) classification의 cost function을 코드로 구현하면? 
 
 승렬) cost= tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis)))
+
 ---
 문제2: softmax classification 문제\
 \
@@ -37,6 +40,7 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
  sess.run(tf.arg_max(all, 1))의 실행값은?
           
 승렬) [2 0 1]
+
 ---
 
 ## 현아
@@ -51,11 +55,13 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 값이 변화하는데, 이렇게 변화된 결과 값은 [A] 사이에 있는 값이고, 합치면 [B]이 된다는 특성이 있다
 
 승렬) A = 0~1, B = 1
+
 ---
 ## 승렬
 문제1.logistic classification을 사용하면 좋을 케이스의 예를 3가지 들어보시오(스팸이랑 시험 pass fail 제외).
 
 승렬) 경마 우승마 예측, 질병 유무 판단, 주가/환율 예측
+
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
 
@@ -67,6 +73,7 @@ http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
 
 승렬) 아웃라이어가 들어오면 모양이 바뀌기 때문에 옳게 예측할 수 없다. 
+
 ---
 
 문제2. cross entropy의 loss와 cost를 구하는 방법은 두가지로 코딩할 수 있습니다 두가지를 모두 
@@ -76,7 +83,7 @@ http://funmv2013.blogspot.com/2017/01/cross-entropy.html
       cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
       cost = tf.reduce_mean(cost_i)
 
-##지원
+## 지원
 
 문제 1. 
 x_data=[[1,2],[2,3],[3,1],[4,3],[5,3],[6,2]]
@@ -86,7 +93,9 @@ X=tf.placeholder(tf.float32, shape=[2,None])	(     )
 Y=tf.placeholder(tf.float32, shape=[6,1])	(     )
 
 승렬) X=tf.placeholder(tf.float32, shape=[None, 2]
---
+
+---
+
 문제 2.
 one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
 
