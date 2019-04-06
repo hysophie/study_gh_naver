@@ -60,7 +60,7 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 문제2. cross entropy의 loss와 cost를 구하는 방법은 두가지로 코딩할 수 있습니다 두가지를 모두 
 
 
-##지원
+## 지원
 
 문제 1. 
 x_data=[[1,2],[2,3],[3,1],[4,3],[5,3],[6,2]]
