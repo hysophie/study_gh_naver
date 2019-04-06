@@ -102,6 +102,8 @@ with tf.Session()as sess:
 
 지원: predicted=tf.cast(hypothesis>0.5,dtype=tf.float32)
 
+아영: predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)
+
 ---
 문제2: [A]와 [B]에 들어갈 알맞은 말을 쓰시오.\
 \
@@ -119,6 +121,8 @@ B: 1
 
 지원: [A]-0과 1, [B]-1
 
+아영:  0과 1, 1
+
 ---
 ## 승렬
 문제1.logistic classification을 사용하면 좋을 케이스의 예를 3가지 들어보시오(스팸이랑 시험 pass fail 제외).
@@ -133,6 +137,8 @@ B: 1
 승렬) 경마 우승마 예측, 질병 유무 판단, 주가/환율 예측
 
 지원: 페이스북 피드-show or hide, 신용카드 이상거래 탐지, 악성 종양 판정(..?)
+
+아영: 종양의 양, 음성 / 주식시장 / 불량품 판별
 
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
@@ -149,6 +155,10 @@ http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 
 지원: softmax classification에서 사용하는 cost function, 
 
+아영:  실체값과 예측값 사이의 차이가 얼마나 되는지 알아보는 cost function
+예측이 맞았을 때 - 0이 나오고 예측이 틀렸을 때 - 무한대가 나옴
+
+
 ## 정우
 
 문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
@@ -160,6 +170,8 @@ http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 승렬) 아웃라이어가 들어오면 모양이 바뀌기 때문에 옳게 예측할 수 없다. 
 
 지원: 선형 모델을 활용할 때 기울기가 변화하면 제대로 분류할 수 없는 경우가 생김, 0 혹은 1이 아닌 예측값이 나올 수 있음(binary classification의 조건에 부합하지 않음)
+
+아영: 1)직선이 너무 기울어짐 (outlier에 영향을 많이 받음) / 2) 가설이 0과 1 밖의 값을 줄 수 있음
 
 ---
 
@@ -176,6 +188,12 @@ cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=logits,l
 
       cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
       cost = tf.reduce_mean(cost_i)
+      
+아영: cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))
+
+cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
+cost = tf.reduce_mean(cost_i)
+
 
 ## 지원
 
@@ -194,6 +212,10 @@ Y=tf.placeholder(tf.float32, shape=[6,1])	(     )
 x: [none, 2]
 x: [none, 1], o도될듯...?
 
+아영: X=tf.placeholder(tf.float32, shape=[2,None])	(   x  ) none, 2
+Y=tf.placeholder(tf.float32, shape=[6,1])	(   x  ) none, 1
+
+
 --
 문제 2.
 one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
@@ -207,6 +229,7 @@ with tf.Session()as sess:
 승렬) X=tf.placeholder(tf.float32, shape=[None, 2]
 
 지원: X [None,2] / O
+
 
 ---
 
@@ -225,3 +248,9 @@ print(a, sess.run(tf.arg_max(a, 1)))
 
 지원: softmax 함수에 입력한 예측값이 확률로 표현될 때 one-hot encoding을 거치게 되면 max 값을 기준으로 1과 0으로 구현할 수 있음,
 argmax를 사용하면 됨
+
+아영: 반환된 softmax 값을 우리가 원하는 label로 바꿔줌
+all = sess.run(hypothesis, feed_dict={X: [[1, 11, 7, 9],
+                                         [1, 3, 4, 3],
+                                         [1, 1, 0, 1]]})
+    print(all, sess.run(tf.arg_max(all, 1)))
