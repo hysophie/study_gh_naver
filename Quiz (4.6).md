@@ -69,6 +69,7 @@ y_data=[[0],[0],[0],[1],[1],[1]]
 X=tf.placeholder(tf.float32, shape=[2,None])	(     )
 Y=tf.placeholder(tf.float32, shape=[6,1])	(     )
 
---
+---
+
 문제 2.
 one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
