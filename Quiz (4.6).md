@@ -81,3 +81,22 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 [방법2] cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
 cost = tf.reduce_mean(cost_i)
 
+## 지원
+
+문제 1. 
+x_data=[[1,2],[2,3],[3,1],[4,3],[5,3],[6,2]]
+y_data=[[0],[0],[0],[1],[1],[1]]
+일 때 다음 코드가 맞으면 O를 틀리면 X를 적고 만약 틀렸을 경우 코드를 수정하시오.
+X=tf.placeholder(tf.float32, shape=[2,None])	(     )
+Y=tf.placeholder(tf.float32, shape=[6,1])	(     )
+
+현아) (X) => 수정: [None, 2] or [6, 2]      /////   (X) => 수정: [None, 1]
+
+---
+
+문제 2.
+one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
+
+현아) one-hot encoding이란 softmax로 만들어낸 probability 값을 비교하여, 최대의 probability 값을 가지는 class에 1을 배정하고 나머지 class에는 0을 배정하는 것이다.
+Y_one_hot = tf.one_hot(Y, nb_classes)
+Y_one_hot = tf.reshape(Y_one_hot, [-1, nb_classes])
