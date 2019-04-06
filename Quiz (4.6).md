@@ -65,4 +65,34 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
 
-- 동건) 식: -sigma(yi*log(g(xi))), 클라스가 여러개인 모델의 비용을 측정하는 데 사용. 
+- 동건) 식: -sigma(yi*log(g(xi))), 클라스가 여러개인 분류모델의 비용을 측정하는 데 사용. 
+
+## 정우
+
+문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
+
+
+---
+
+문제2. cross entropy의 loss와 cost를 구하는 방법은 두가지로 코딩할 수 있습니다 두가지를 모두 
+
+- 동건)
+
+## 지원
+
+문제 1. 
+x_data=[[1,2],[2,3],[3,1],[4,3],[5,3],[6,2]]
+y_data=[[0],[0],[0],[1],[1],[1]]
+일 때 다음 코드가 맞으면 O를 틀리면 X를 적고 만약 틀렸을 경우 코드를 수정하시오.
+X=tf.placeholder(tf.float32, shape=[2,None])	(     )
+Y=tf.placeholder(tf.float32, shape=[6,1])	(     )
+
+- 동건) X, [6,2] / O
+
+---
+
+문제 2.
+one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인지 작성하시오.
+
+- 동건) 실수값을 0과 1로 코딩하는 것. Y_one_hot = tf.one_hot(Y, nb_classes) ; Y_one_hot = tf.reshape(Y_one_hot, [-1, nb_classes])
+
