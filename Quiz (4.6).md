@@ -79,6 +79,5 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 
 현아) [방법1] cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))  
 [방법2] cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
-
 cost = tf.reduce_mean(cost_i)
 
