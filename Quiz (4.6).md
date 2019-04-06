@@ -4,7 +4,6 @@
 정우)
 그래프를 그리면 울퉁불퉁한 모양이 나오는데 이렇게 되면 local minimum을 global minimum으로 착각하는 일이 벌어짐, 로그를 취해서 그래프 모양을 잡아줘야한다.
 
-=======
 승렬) 구불구불해서 global minimum을 찾을수가 없다.
 
 ---
@@ -25,7 +24,6 @@ x =
 정우)
 (3,2,2)
 
-=======
  승렬) (2, 1, 3, 2)
 
 ## 아영
@@ -35,7 +33,6 @@ x =
 cost = -tf.reduce_mean( Y * tf.log(hypothesis) + (1 - Y) * tf.log(1- hypothesis))
 train = tf.train.GradientDescentOptimizer(learning_rate = 0.01).minimize(cost)
 
-=======
 승렬) cost= tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis)))
 
 ---
@@ -53,7 +50,6 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
  정우:
 [2 1 2]
 
-=======
 승렬) [2 0 1]
 
 ---
@@ -62,12 +58,11 @@ all = sess.run(hypothesis, feed_dict={X: [[1, 1, 0, 1], \
 문제1: hypothesis = tf.sigmoid(tf.matmul(X,w) + b)로 선언했을 때, hypothesis의 값은 0.1, 0.8 등 0~1 사이의 다양한 값을 가질 수 있다.
 이렇게 다양한 hypothesis의 값을 1.0, 0.0이라는 2가지의 값으로 바꾸는 작업을 tensorflow 코드로 표현하시오. 
 
-정우:
+정우)
 with tf.Session()as sess:
    a = sess.run(hypothesis, feed_dict = {X: x_data})
    print(a, sess.run(tf.arg_max(a,1)))
 
-=======
 승렬) predicted = tf.cast(hypothesis > 0.5, dtype= tf.float32)
 
 ---
@@ -79,7 +74,6 @@ logistic classifier로 계산된 값이 softmax 함수를 통과하고 나면 �
 A: 0과 1
 B: 1
 
-=======
 승렬) A = 0~1, B = 1
 
 ---
@@ -89,7 +83,6 @@ B: 1
 정우) 
 남자 여자, 키 180초과 180이하, 20세이상 20세 미만 
 
-=======
 승렬) 경마 우승마 예측, 질병 유무 판단, 주가/환율 예측
 
 ---
@@ -99,7 +92,6 @@ B: 1
 정우)
 실제 값과 예측된 값이 얼마나 차이가 있는지를 구하는 식, softmax classifier의 cost function을 구해야 하는데 cross entropy를 사용해야 맞았을때 값이 작아지고 틀렸을 때 값이 커짐
 
-=======
 승렬) http://blog.naver.com/PostView.nhn?blogId=gyrbsdl18&logNo=221013188633&parentCategoryNo=3&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
 http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 
@@ -141,7 +133,6 @@ with tf.Session()as sess:
    a = sess.run(hypothesis, feed_dict = {X: x_data})
    print(a, sess.run(tf.arg_max(a,1)))
 
-=======
 승렬) X=tf.placeholder(tf.float32, shape=[None, 2]
 
 ---
