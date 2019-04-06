@@ -13,6 +13,10 @@
 
 지원: sigmoid 함수만으로 logistic cost를 정의할 경우 시작점에 따라 최저점이 달라질 수 있음
 
+아영:  새로운 H(x)를 사용해서 cost function을 그리면 울퉁불퉁해짐
+→ 시작점에 따라서 값이 달라짐 (local minimum을 global minimum으로 착각)
+
+
 ---
 문제2:
 
