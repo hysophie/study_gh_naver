@@ -8,6 +8,9 @@
 
 승렬) 구불구불해서 global minimum을 찾을수가 없다.
 
+
+지원: sigmoid 함수만으로 logistic cost를 정의할 경우 시작점에 따라 최저점이 달라질 수 있음
+
 ---
 문제2:
 
@@ -40,6 +43,8 @@ cost = -tf.reduce_mean( Y * tf.log(hypothesis) + (1 - Y) * tf.log(1- hypothesis)
 train = tf.train.GradientDescentOptimizer(learning_rate = 0.01).minimize(cost)
 
 승렬) cost= tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis) + (1-Y)*tf.log(1-hypothesis)))
+
+지원: cost=tf.reduce_mean(-tf.reduce_sum(Y*tf.log(hypothesis)+(1-Y)*tf.log(1-hypothesis)))
 
 ---
 문제2: softmax classification 문제\
@@ -75,6 +80,8 @@ with tf.Session()as sess:
 
 승렬) predicted = tf.cast(hypothesis > 0.5, dtype= tf.float32)
 
+지원: predicted=tf.cast(hypothesis>0.5,dtype=tf.float32)
+
 ---
 문제2: [A]와 [B]에 들어갈 알맞은 말을 쓰시오.\
 \
@@ -88,6 +95,8 @@ B: 1
 
 승렬) A = 0~1, B = 1
 
+지원: [A]-0과 1, [B]-1
+
 ---
 ## 승렬
 문제1.logistic classification을 사용하면 좋을 케이스의 예를 3가지 들어보시오(스팸이랑 시험 pass fail 제외).
@@ -98,6 +107,8 @@ B: 1
 남자 여자, 키 180초과 180이하, 20세이상 20세 미만 
 
 승렬) 경마 우승마 예측, 질병 유무 판단, 주가/환율 예측
+
+지원: 페이스북 피드-show or hide, 신용카드 이상거래 탐지, 악성 종양 판정(..?)
 
 ---
 문제2. cross entropy는 무엇이고 어떤 이유로 사용하는지 설명하시오.
@@ -110,6 +121,8 @@ B: 1
 승렬) http://blog.naver.com/PostView.nhn?blogId=gyrbsdl18&logNo=221013188633&parentCategoryNo=3&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
 http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 
+지원: softmax classification에서 사용하는 cost function, 
+
 ## 정우
 
 문제 1. linear Regression을 통해 classification을 하면 생기는 문제 2가지에 대해 설명해 보세요
@@ -117,6 +130,8 @@ http://funmv2013.blogspot.com/2017/01/cross-entropy.html
 동건) 연속적인 값이므로 분류기준을 정하기 어렵다. 
 
 승렬) 아웃라이어가 들어오면 모양이 바뀌기 때문에 옳게 예측할 수 없다. 
+
+지원: 선형 모델을 활용할 때 기울기가 변화하면 제대로 분류할 수 없는 경우가 생김, 0 혹은 1이 아닌 예측값이 나올 수 있음(binary classification의 조건에 부합하지 않음)
 
 ---
 
@@ -157,6 +172,8 @@ with tf.Session()as sess:
 
 승렬) X=tf.placeholder(tf.float32, shape=[None, 2]
 
+지원: X [None,2] / O
+
 ---
 
 문제 2.
@@ -167,3 +184,6 @@ one-hot encoding에 대해 설명하고 이를 구현하는 코드가 무엇인�
 승렬) 소프트맥스 함수를 거치면 값들을 0~1 사이의 확률로 바꿔주는데, 이 값을 다시 0이나 1로 바꿔주는 기법을 one-hot encoding이라 한다.
 코드: a= sess.run(hypothesis, feed_dict = {X: [[?, ?, ?, ?], .....
 print(a, sess.run(tf.arg_max(a, 1)))
+
+지원: softmax 함수에 입력한 예측값이 확률로 표현될 때 one-hot encoding을 거치게 되면 max 값을 기준으로 1과 0으로 구현할 수 있음,
+argmax를 사용하면 됨
