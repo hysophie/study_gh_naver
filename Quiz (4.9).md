@@ -42,7 +42,7 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 ## 현아
 
 ### 문제1
-Gradient Descent를 하기 위해, Data(X)의 preprocessing이 필요한 경우는 어떤 경우인가?
+Regularization이 어떤 경우에 사용되는지 서술하고, regularization을 tensorflow 코드로 작성하시오.
 
 ---
 
@@ -59,8 +59,8 @@ Gradient Descent를 하기 위해, Data(X)의 preprocessing이 필요한 경우�
 ### 문제1
 learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 않는 경우 취할 수 있는 해결책은?
 
----
 
+---
 ### 풀이
 - 동건)  
 - 정우)  
@@ -68,6 +68,25 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 - 아영)  
 - 승렬)  
 - 지원)   
+
+### 문제 2
+matrix1 = tf.constant([[3., 2.], [1., 5.]])
+matrix2 = tf.constant([7.], [4.])
+일 때, 
+
+tf.matmul(matrix1, matrix2).eval()의 결과값과
+(matrix * matrix2).eval()의 결과값을 각각 구하시오.
+
+
+---
+### 풀이
+- 동건)  
+- 정우)  
+- 현아)  
+- 아영)  
+- 승렬)  
+- 지원)  
+
 
 ### 문제2
 x = [1, 4]
