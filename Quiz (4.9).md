@@ -41,7 +41,8 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 
 ## 현아
 
-### 문제
+### 문제1
+Gradient Descent를 하기 위해, Data(X)의 preprocessing이 필요한 경우는 어떤 경우인가?
 
 ---
 
