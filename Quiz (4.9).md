@@ -180,11 +180,24 @@ tf.reduce_mean(x, axis=2).eval()
 ### 문제 1
 Learning rate을 0.5로 설정하고 머신러닝을 돌렸더니 cost가 발산해버렸다. 이 문제를 영어 단어로 표현하고, 문제 해결 방법을 서술하시오.
 
+---
+
+### 풀이
+- 동건)  
+- 정우)  
+- 현아)  
+- 아영)  
+- 승렬)  
+- 지원)  
+
 ### 문제 2
 다음과 같이 shape이 다른 matrix를 계산할 수 있도록 작업하는 것을 지칭하는 (영어) 단어와 결과값을 작성하시오.
-Matrix1=tf.constant([[1.,2.]])
+
+'''
+Matrix1=tf.constant([[1.,2.]]) 
 Matrix2=tf.constant([[1.],[2.],[3.]])
 (Matrix1+Matrix2).eval()
+'''
 
 ---
 
