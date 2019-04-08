@@ -55,7 +55,14 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 
 ## 아영
 
-### 문제
+### 문제1
+learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 않는 경우 취할 수 있는 해결책은?
+
+### 문제2
+x = [1, 4]
+y = [2, 5]
+z = [3, 6] 일때
+tf.stack([x, y, z], axis=0).eval()의 결과는?
 
 ---
 
