@@ -55,7 +55,12 @@ Regularization이 어떤 경우에 사용되는지 서술하고, regularization�
 - 지원)    
 
 ### 문제 2
-epoch와 batch_size의 의미는 무엇이고 batch를 여러 개로 나누는 이유는?
+matrix1 = tf.constant([[3., 2.], [1., 5.]])
+matrix2 = tf.constant([7.], [4.])
+일 때, 
+
+tf.matmul(matrix1, matrix2).eval()의 결과값과
+(matrix * matrix2).eval()의 결과값을 각각 구하시오.
 
 ---
 ### 풀이
