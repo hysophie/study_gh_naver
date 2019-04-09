@@ -72,7 +72,7 @@ Regularization이 어떤 경우에 사용되는지 서술하고, regularization�
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아)  regularization은 overfitting 문제를 해결하기 위해 사용됩니다. 코드는 l2reg = 0.001 * tf.reduce_sum(tf.square(W))를 선언한 후, 기존의 cost function에 l2reg를 더하면 됩니다.
 - 아영)  
 - 승렬)  
 - 지원)    
@@ -89,7 +89,7 @@ tf.matmul(matrix1, matrix2).eval()의 결과값과
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아) array([29.], [27.]], dtype=float32) /// array([[21., 14.], [4., 20.]], dtype=float32) 
 - 아영)  
 - 승렬)  
 - 지원)  
@@ -104,7 +104,7 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아) data의 값이 너무 크게 차이가 나는지 확인하고, 크게 차이가 난다면 data preprocessing(특히 standardization의 방법)을 활용한다. 
 - 아영)  
 - 승렬)  
 - 지원)   
@@ -124,23 +124,6 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 - 승렬)  
 - 지원)  
 
-
-### 문제2
-x = [1, 4]
-y = [2, 5]
-z = [3, 6] 일때
-tf.stack([x, y, z], axis=0).eval()의 결과는?
-
----
-
-### 풀이
-- 동건)  
-- 정우)  
-- 현아)  
-- 아영)  
-- 승렬)  
-- 지원)   
-
 ## 승렬
 
 ### 문제 1.
@@ -151,7 +134,7 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아) data들의 값이 너무 큰 차이가 나는 경우 data preprocessing이 필요하다. 이렇게 data를 normalize하는 방법들로는, zero-centered data로 만드는 것(데이터의 분포의 중심이 0이 되도록 맞춤)과 standardization을 하는 것(데이터에서 평균을 뺀 값을 표준편차로 나눔)이 있다.
 - 아영)  
 - 승렬)  
 - 지원)    
@@ -182,7 +165,7 @@ Learning rate을 0.5로 설정하고 머신러닝을 돌렸더니 cost가 발산
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아) overshooting의 문제가 발생한 것이다. 이를 해결하려면 Learning rate를 적정 수준으로 내려야 한다. (참고: 일반적으로 많이 쓰는 learning rate = 0.1)  
 - 아영)  
 - 승렬)  
 - 지원) 
