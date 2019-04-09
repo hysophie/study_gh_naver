@@ -109,14 +109,11 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 - 승렬)  
 - 지원)   
 
-### 문제 2
-matrix1 = tf.constant([[3., 2.], [1., 5.]])
-matrix2 = tf.constant([7.], [4.])
-일 때, 
-
-tf.matmul(matrix1, matrix2).eval()의 결과값과
-(matrix * matrix2).eval()의 결과값을 각각 구하시오.
-
+### 문제2
+x = [1, 4]
+y = [2, 5]
+z = [3, 6] 일때
+tf.stack([x, y, z], axis=0).eval()의 결과는?
 
 ---
 ### 풀이
