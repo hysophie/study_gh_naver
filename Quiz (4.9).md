@@ -139,7 +139,7 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 - 동건)  
 - 정우)  
 - 현아)  
-- 아영) 데이터 값에 큰 차이가 있어서 경사하강법을 적용하기 힘든 경우 / zero-centered data (data 중심이 0으로 갈수록), normalized data(데이터 전체의 범위가 어떤 값 안에 들어갈 수 있도록)
+- 아영) 데이터 값에 큰 차이가 있어서 경사하강법을 적용하기 힘든 경우 / zero-centered data (data 중심이 0으로 가게), normalized data(데이터 전체의 범위가 어떤 값 안에 들어갈 수 있도록)
 - 승렬)  
 - 지원)    
 
