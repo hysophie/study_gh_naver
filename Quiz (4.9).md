@@ -6,10 +6,10 @@ epoch와 batch_size의 의미는 무엇이고 batch를 여러 개로 나누는 �
 ---
 ### 풀이
 - 동건)  
+- 정우)  전체 데이터셋을 한번 학습한것(돈것),한번에 학습시킬 데이터의 크기, 데이터가 너무크기때문에 나눠서 진행함
 epoch: 전체 데이터를 활용한 학습 횟수.(Step 횟수와 같은 의미 -> 지금까지 range()로 표현되었던 부분)  
 batch_size: 한 번의 epoch을 진행할 때, 모든 데이터를 메모리에 올려놓지 않고 나누어 진행하기 위해 만든 batch의 크기.  
 대용량 데이터를 사용할 때, 메모리를 효율적으로 사용하기 위해서  
-- 정우)  
 - 현아)  
 - 아영)  
 - 승렬) batch_size란 한번에 몇개씩을 학습시킬까 하는 것이고 epoch는 전체 데이터셋을 학습시키는 횟수를 뜻한다. batch를 나누는 이유는 데이터가 너무 클 때 메모리 부족 문제로 한번에 다 돌릴 수 없기 때문이다.
@@ -21,7 +21,7 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 ---
 ### 풀이
 - 동건) input의 자료형이 int이기 때문에 output의 자료형도 int, 실수값을 반환하기 위해서는 뒤에. 을 붙여야한다.  
-- 정우)  
+- 정우) float 형식으로 넣어야하는데 integer로 값을 넣었기 때문에   
 - 현아)  
 - 아영)  
 - 승렬) 값이 integer로 나오기 때문에 소수점이 없다.
@@ -36,7 +36,7 @@ learning late를 제대로 설정했다고 가정했을때 nan이 나오는 이�
 
 ### 풀이
 - 동건)  학습률이 너무 커서 발산이 일어나면, nan값이 나온다. learning late를 낮춘다. 
-- 정우)  
+- 정우)  오타났네요... input 데이터가 normalize 되지 않아서 그렇습니다. MinMaxscaler가 사용됩니다.
 - 현아)  
 - 아영)  
 - 승렬) 학습 데이터의 어레이 안의 값들이 너무 큰 차이가 날 때 nan이 나올 수 있다. 해결은 normalization으로 할 수 있으며 코드는
@@ -59,7 +59,7 @@ t = np.array([[[0,2], [0,1]],[[0,3], [3,1]], [[3,1],[4,3]]])일 때 tf.reshape�
 
 ### 풀이
 - 동건)  tf.reshape(t, shape = [3,2,2]).eval()
-- 정우)  
+- 정우)  tf.reshape(t, shape = [-1, 2, 2]).eval()
 - 현아)  
 - 아영)  
 - 승렬) 그대로인걸...? tf.reshpae(t, shape=[-1,2,2])
@@ -74,7 +74,7 @@ Regularization이 어떤 경우에 사용되는지 서술하고, regularization�
 
 ### 풀이
 - 동건) overfitting을 막기위해 사용. 가중치 부여 방식에 따라 L1,L2 규제 등이 있다. 
-- 정우)  
+- 정우)  weight이 너무 커서 overfitting 될 때 weight을 줄이기 위해서 사용됨, l2reg = 0.001 * tf.reduce_sum(tf.square(W))
 - 현아)  
 - 아영)  
 - 승렬) overfitting을 줄이기 위해 사용한다. l2reg = gamma*tf.reduce_sum(tf.square(W)) 을 cost function뒤에 더한 후 초기화.
@@ -91,7 +91,7 @@ tf.matmul(matrix1, matrix2).eval()의 결과값과
 ---
 ### 풀이
 - 동건)  array([[29.],[27.]]), array([[21., 14.],[ 4., 20.]])
-- 정우)  
+- 정우) array([[29.], [27.]]) / array([[21. , 14.] , [ 4., 20.]]) 
 - 현아)  
 - 아영)  
 - 승렬)  
@@ -109,7 +109,7 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 ---
 ### 풀이
 - 동건) 학습횟수를 늘린다.  
-- 정우)  
+- 정우) input 데이터가 normalize되지 않았을 수 있기 때문에 데이터를 normalize 해줘야한다. minmaxscaler
 - 현아)  
 - 아영)  
 - 승렬) dataset을 normalize한다.
@@ -124,7 +124,7 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 ---
 ### 풀이
 - 동건) array([[1, 4],[2, 5],[3, 6]])  
-- 정우)  
+- 정우) array([[1, 4], [2, 5], [3, 6]]) 
 - 현아)  
 - 아영)  
 - 승렬)  
@@ -142,9 +142,10 @@ array([[1, 4],
 ---
 
 ### 풀이
+
 - 동건) 변수들의 측정단위가 달라서 range의 차이가 크거나, 집적기준 등이 달라서 공정한 비교가 필요할 때 사용한다. 
 모든 변수들을 표준화하거나, 0~1사이의 범위로 바꾸거나, 정규화하거나 다양한 방법들이 있다.      
-- 정우)  
+- 정우)  값들의 편차가 매우커서 그래프(등고선)을 그렸을 때 곡된 경우, learning rate 값이 좋아도 값이 튀는 경우가 발생한다. zero-center(데이터의 중심을 0으로 맞추는 방법, normalize(값 전체의 범위가 어떤 범위안에 항상들어가도록 만드는 방법 ex:standardization) 등의 방법이있다.
 - 현아)  
 - 아영)  
 - 승렬) x 행렬의 열들 사이에 값의 차이가 너무 클때 preprocessing이 필요하고, 방법은 zero-center로 만들기, normalizaion이 있다.
@@ -159,8 +160,9 @@ tf.reduce_mean(x, axis=2).eval()
 ---
 
 ### 풀이
+
 - 동건)  array([[[ 5.,  6.,  7.,  8.],[17., 18., 19., 20.]]])
-- 정우)  
+- 정우) array([[[ 5.,  6.,  7.,  8.], [17., 18., 19., 20.]]], dtype=float32)  
 - 현아)  
 - 아영)  
 - 승렬) array([[[5., 6., 7., 8.], [17., 18., 19., 20.]]], dtype=float32)
@@ -175,7 +177,7 @@ Learning rate을 0.5로 설정하고 머신러닝을 돌렸더니 cost가 발산
 
 ### 풀이
 - 동건) 학습률을 0.5이하로 낮춘다.   
-- 정우)  
+- 정우) overshooting, learning rate를 줄여준다  
 - 현아)  
 - 아영)  
 - 승렬) overshooting. learning rate를 줄이면 된다.
@@ -198,7 +200,7 @@ Matrix2=tf.constant([[1.],[2.],[3.]])
 
 ### 풀이
 - 동건) broadcasting, array([[2., 3.],[3., 4.],[4., 5.]])
-- 정우)  
+- 정우) broadcasting, array([[2., 3.], [3., 4.],[4., 5.]], dtype=float32)   
 - 현아)  
 - 아영)  
 - 승렬) broadcasting.
