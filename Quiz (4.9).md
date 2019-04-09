@@ -35,7 +35,7 @@ learning late를 제대로 설정했다고 가정했을때 nan이 나오는 이�
 ### 풀이
 - 동건)  
 - 정우)  
-- 현아)  
+- 현아) learning rate이 적절해도 NaN이 나오는 이유는 너무 큰 값의 데이터가 있거나, 데이터의 크기가 들쭉날쭉 할 때, 즉 non-normalized data 때문이다. 이를 해결하는 방법은 데이터를 normalize하는 것이고, 코드로 표현하면 xy = MinMaxScaler(xy)
 - 아영)  
 - 승렬)  
 - 지원) 
