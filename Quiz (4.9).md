@@ -12,7 +12,7 @@ batch_size: 한 번의 epoch을 진행할 때, 모든 데이터를 메모리에 
 - 현아) epoch: 전체 dataset을 한 번 다 학습시키는 것 / batch_size: 한 번에 학습시키는 데이터의 크기 / batch를 여러 개로 나누는 이유: data가 많을 경우 한 번에 메모리에 넣어 학습시킬 수 없기 때문에 
 - 아영)  
 - 승렬) batch_size란 한번에 몇개씩을 학습시킬까 하는 것이고 epoch는 전체 데이터셋을 학습시키는 횟수를 뜻한다. batch를 나누는 이유는 데이터가 너무 클 때 메모리 부족 문제로 한번에 다 돌릴 수 없기 때문이다.
-- 지원)  
+- 지원) epoch는 알고리즘이 전체 훈련 데이터셋을 반복해서 학습하는 횟수를 의미한다. batch_size는 큰 training set을 몇 개로 나누었냐는 것이고, learning accuracy를 늘리기 위해 여러개로 나눈다.
 
 ### 문제 2
 tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
@@ -24,7 +24,7 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 - 현아) 1, 2의 자료형이 integer(정수형)이므로.
 - 아영)  
 - 승렬) 값이 integer로 나오기 때문에 소수점이 없다.
-- 지원)  
+- 지원)  1과 2의 평균을 구하면 1.5가 나와야하지만 int값을 입력했기 때문에 결과값도 int값으로 출력된다. Float형을 int값으로 변환하면 소수점 밑의 숫자가 원래 버려졌던가 반올림이 아니었나.. 헷갈린다 ㅎㅅㅎ 근데 소수점 밑의 숫자가 버려지는게 맡는 것 같다 :) 
 
 ## 정우
 
@@ -40,7 +40,7 @@ learning late를 제대로 설정했다고 가정했을때 nan이 나오는 이�
 - 아영)  
 - 승렬) 학습 데이터의 어레이 안의 값들이 너무 큰 차이가 날 때 nan이 나올 수 있다. 해결은 normalization으로 할 수 있으며 코드는
        xy = MinMaxScaler(xy) 이다.
-- 지원) 
+- 지원) Data preprocessing(normalized)을 했는지 점검하고 standadiztion하기 / X_std[:0,]=(X[:,0]-X[:,0].mean())/X[:,0].std()
 
 ### 문제2
 
@@ -62,7 +62,7 @@ t = np.array([[[0,2], [0,1]],[[0,3], [3,1]], [[3,1],[4,3]]])일 때 tf.reshape�
 - 현아) ????? 원래 t의 shape은 (3,2,2)이고, 바꾸고자 하는 shape도 (3,2,2)이다.
 - 아영)  
 - 승렬) 그대로인걸...? tf.reshpae(t, shape=[-1,2,2])
-- 지원)    
+- 지원) tf.reshape(t, shape=[3(or -1), 2, 2]).eval()   
 
 ## 현아
 
@@ -78,7 +78,7 @@ Regularization이 어떤 경우에 사용되는지 서술하고, regularization�
 - 현아)  regularization은 overfitting 문제를 해결하기 위해 사용됩니다. 코드는 l2reg = 0.001 * tf.reduce_sum(tf.square(W))를 선언한 후, 기존의 cost function에 l2reg를 더하면 됩니다.
 - 아영)  
 - 승렬) overfitting을 줄이기 위해 사용한다. l2reg = gamma*tf.reduce_sum(tf.square(W)) 을 cost function뒤에 더한 후 초기화.
-- 지원)    
+- 지원)  Solutions for overfitting /  l2reg=0.001*tf.reduce_sum(tf.square(W))   
 
 ### 문제 2
 matrix1 = tf.constant([[3., 2.], [1., 5.]])
@@ -100,7 +100,7 @@ array([[29.],
        [27.]], dtype=float32)
 array([[21., 14.]
        [ 4., 20.]], dtype=float32)
-- 지원)  
+- 지원) array([[29.],[27.], dtype=float32] / array([[21., 14.],[4., 20.]], dtype=float32) 
 
 ## 아영
 
@@ -114,7 +114,7 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 - 현아) data의 값이 너무 크게 차이가 나는지 확인하고, 크게 차이가 난다면 data preprocessing(특히 standardization의 방법)을 활용한다. 
 - 아영)  
 - 승렬) dataset을 normalize한다.
-- 지원)   
+- 지원) normalized, standardization   
 
 ### 문제2
 x = [1, 4]
@@ -135,7 +135,7 @@ array([[1, 4],
 array([[1, 4],
        [2, 5],
        [3, 6]], dtype=int32)
-- 지원)  
+- 지원)  axis 개념을 이해해야 풀 수 있는 것 같은데 axis가 이해되지 않아서요.. Christine의 친절한 설명 기대할게요 ^^..
 
 ## 승렬
 
@@ -151,7 +151,7 @@ array([[1, 4],
 - 현아) data들의 값이 너무 큰 차이가 나는 경우 data preprocessing이 필요하다. 이렇게 data를 normalize하는 방법들로는, zero-centered data로 만드는 것(데이터의 분포의 중심이 0이 되도록 맞춤)과 standardization을 하는 것(데이터에서 평균을 뺀 값을 표준편차로 나눔)이 있다.
 - 아영)  
 - 승렬) x 행렬의 열들 사이에 값의 차이가 너무 클때 preprocessing이 필요하고, 방법은 zero-center로 만들기, normalizaion이 있다.
-- 지원)    
+- 지원) 데이터 간의 차이가 너무 크면 normalize 할 필요가 있음, 데이터의 중심이 0으로 세팅된 zero-centered data와 데이터 값이 특정 범위 내에 있도록 세팅된 normalized data가 있고, standardization이 가장 흔한 전처리 방법임.   
 
 ### 문제 2.
 다음 코드의 결과값을 구하시오.
@@ -167,7 +167,7 @@ tf.reduce_mean(x, axis=2).eval()
 - 현아) [[[5,6,7,8],[17,18,19,20]]]    (참고: x의 shape은 (1,2,3,4)임)
 - 아영)  
 - 승렬) array([[[5., 6., 7., 8.], [17., 18., 19., 20.]]], dtype=float32)
-- 지원)    
+- 지원) axis 개념을 이해해야 풀 수 있는 것 같은데 axis가 이해되지 않아서요.. Sunny의 친절한 설명 기대할게요 ^^..    
 
 ## 지원
 
@@ -182,7 +182,7 @@ Learning rate을 0.5로 설정하고 머신러닝을 돌렸더니 cost가 발산
 - 현아) overshooting의 문제가 발생한 것이다. 이를 해결하려면 Learning rate를 적정 수준으로 내려야 한다. (참고: 일반적으로 많이 쓰는 learning rate = 0.1)  
 - 아영)  
 - 승렬) overshooting. learning rate를 줄이면 된다.
-- 지원) 
+- 지원) Overshooting, learning rate를 작게 조정한다.
 
 ---
 
@@ -211,4 +211,4 @@ array([[2., 3.],
 array([[2.,3.]
        [3.,4.]
        [4.,5.]], dtype=float32)
-- 지원)  
+- 지원)  broadcasting / Array([[2.,3.],[3.,4.],[4.,5.]].dtype=float32) 
