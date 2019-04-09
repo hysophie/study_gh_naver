@@ -12,7 +12,7 @@ batch_size: 한 번의 epoch을 진행할 때, 모든 데이터를 메모리에 
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) batch_size란 한번에 몇개씩을 학습시킬까 하는 것이고 epoch는 전체 데이터셋을 학습시키는 횟수를 뜻한다. batch를 나누는 이유는 데이터가 너무 클 때 메모리 부족 문제로 한번에 다 돌릴 수 없기 때문이다.
 - 지원)  
 
 ### 문제 2
@@ -24,7 +24,7 @@ tf.reduce_mean([1, 2], axis = 0).eval() 의 값이 1인 이유는?
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) 값이 integer로 나오기 때문에 소수점이 없다.
 - 지원)  
 
 ## 정우
@@ -39,7 +39,8 @@ learning late를 제대로 설정했다고 가정했을때 nan이 나오는 이�
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) 학습 데이터의 어레이 안의 값들이 너무 큰 차이가 날 때 nan이 나올 수 있다. 해결은 normalization으로 할 수 있으며 코드는
+       xy = MinMaxScaler(xy) 이다.
 - 지원) 
 
 ### 문제2
@@ -61,7 +62,7 @@ t = np.array([[[0,2], [0,1]],[[0,3], [3,1]], [[3,1],[4,3]]])일 때 tf.reshape�
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) 그대로인걸...? tf.reshpae(t, shape=[-1,2,2])
 - 지원)    
 
 ## 현아
@@ -76,7 +77,7 @@ Regularization이 어떤 경우에 사용되는지 서술하고, regularization�
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) overfitting을 줄이기 위해 사용한다. l2reg = gamma*tf.reduce_sum(tf.square(W)) 을 cost function뒤에 더한 후 초기화.
 - 지원)    
 
 ### 문제 2
@@ -94,6 +95,10 @@ tf.matmul(matrix1, matrix2).eval()의 결과값과
 - 현아)  
 - 아영)  
 - 승렬)  
+array([[29.],
+       [27.]], dtype=float32)
+array([[21., 14.]
+       [ 4., 20.]], dtype=float32)
 - 지원)  
 
 ## 아영
@@ -107,7 +112,7 @@ learning rate를 잘 설정했는데도 cost function이 제대로 동작하지 
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) dataset을 normalize한다.
 - 지원)   
 
 ### 문제2
@@ -123,6 +128,9 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 - 현아)  
 - 아영)  
 - 승렬)  
+array([[1, 4],
+       [2, 5],
+       [3, 6]], dtype=int32)
 - 지원)  
 
 
@@ -139,7 +147,7 @@ tf.stack([x, y, z], axis=0).eval()의 결과는?
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) x 행렬의 열들 사이에 값의 차이가 너무 클때 preprocessing이 필요하고, 방법은 zero-center로 만들기, normalizaion이 있다.
 - 지원)    
 
 ### 문제 2.
@@ -155,7 +163,7 @@ tf.reduce_mean(x, axis=2).eval()
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)
+- 승렬) array([[[5., 6., 7., 8.], [17., 18., 19., 20.]]], dtype=float32)
 - 지원)    
 
 ## 지원
@@ -170,7 +178,7 @@ Learning rate을 0.5로 설정하고 머신러닝을 돌렸더니 cost가 발산
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) overshooting. learning rate를 줄이면 된다.
 - 지원) 
 
 ---
@@ -193,5 +201,8 @@ Matrix2=tf.constant([[1.],[2.],[3.]])
 - 정우)  
 - 현아)  
 - 아영)  
-- 승렬)  
+- 승렬) broadcasting.
+array([[2.,3.]
+       [3.,4.]
+       [4.,5.]], dtype=float32)
 - 지원)  
