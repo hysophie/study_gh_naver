@@ -47,7 +47,8 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 
 ## 승렬
 
-### 문제1. Find another W and b for the XOR. (lec9-1 11:43 그림 참조)
+### 문제1. 
+Find another W and b for the XOR. (lec9-1 11:43 그림 참조)
 
 ### 풀이
 - 동건: 
@@ -71,6 +72,7 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 ## 현아
 
 ### 문제1
+Neural Network가 deep하다 & wide하다는 것의 의미를 각각 서술하시오.
 
 ### 풀이
 - 동건: 
