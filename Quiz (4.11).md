@@ -83,6 +83,7 @@ Neural Network가 deep하다 & wide하다는 것의 의미를 각각 서술하�
 - 지원:
 
 ### 문제2
+TensorBoard를 사용하는 5가지 단계에 대해 설명하시오.
 
 ### 풀이
 - 동건:
