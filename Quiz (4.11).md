@@ -130,6 +130,7 @@ learning rate가 0.1일때와 learning rate가 0.01일때의 그래프를 비교
 - 지원:
 
 ### 문제2
+back propagation을 간략히 서술하시오.
 
 ### 풀이
 - 동건:
