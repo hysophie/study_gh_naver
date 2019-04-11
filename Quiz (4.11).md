@@ -5,7 +5,7 @@
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: 각각의 입력값이 y에 미치는 영향(미분값)을 알아야 각각의 w를 조절할 수 있는데 기존의 방법으로는 게산이 너무 복잡해서 불가능하다고 여겨짐, 이를해결하기 위해서 역전파 알고리즘을 
 - 현아:
 - 아영:
 - 승렬:
@@ -16,7 +16,7 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 
 ### 풀이
 - 동건:
-- 정우: 
+- 정우:2(x+b) 
 - 현아:
 - 아영:
 - 승렬:
@@ -29,7 +29,17 @@ Layer가 3개이며, layer1은 2개를 입력받고, layer 2는 3개 입력, 1ay
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: W1 = tf.Variable(tf.random_normal([2,3]), name = 'weight1')
+b1 = tf.Variable(tf.random_normal([3]), name = 'bias1')
+layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([3,4]), name = 'weight1')
+b2 = tf.Variable(tf.random_normal([4]), name = 'bias1')
+layer2 = tf.sigmoid(tf.matmul(layer1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([4,5]), name = 'weight2')
+b3 = tf.Variable(tf.random_normal([5]), name = 'bias2')
+hypothesis = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 - 현아: 
 - 아영:
 - 승렬: 
@@ -39,7 +49,7 @@ Layer가 3개이며, layer1은 2개를 입력받고, layer 2는 3개 입력, 1ay
 F(X) = 3(2X + Y)^2을 X에대해 편미분해 보시오
 ### 풀이
 - 동건:
-- 정우: 
+- 정우: 12(X+Y)
 - 현아:
 - 아영:
 - 승렬:
@@ -53,7 +63,7 @@ Find another W and b for the XOR. (lec9-1 11:43 그림 참조)
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: w1 = [3,3] b1 = -5, w2 = [-8,-8] b2 = 6 w3 = [-5,-5], b3 = 3 
 - 현아: 
 - 아영:
 - 승렬: 
@@ -63,7 +73,7 @@ Find another W and b for the XOR. (lec9-1 11:43 그림 참조)
 Tensorboard에서 learning rate를 다르게 한 두개 이상의 그래프를 한번에 visualize 하기 위해서는 어떻게 해야 하는가?
 ### 풀이
 - 동건:
-- 정우: 
+- 정우: multiple run. write하는 부분에서 하나의 디렉토리안에 여러개의 디렉토리를 저장. 그리고 부모 디렉토리를 run한다 
 - 현아:
 - 아영:
 - 승렬:
@@ -77,7 +87,7 @@ Neural Network가 deep하다 & wide하다는 것의 의미를 각각 서술하�
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: WIDE: 출력값과 입력값, DEEP: 레이어의 개수
 - 현아: 
 - 아영:
 - 승렬: 
@@ -88,7 +98,7 @@ TensorBoard를 사용하는 5가지 단계에 대해 설명하시오.
 
 ### 풀이
 - 동건:
-- 정우: 
+- 정우: 1. 어떤 값을 logging 할것인지 정하고 값을  2.서머리를 머지 3. 파일의 위치를 정하고 그래프를 넣어줌 4. 서머리를 실행하고 파일에 기록 5. 텐서보드 실행 
 - 현아:
 - 아영:
 - 승렬:
@@ -102,7 +112,7 @@ g=wx, f=g+b이고 δg/δw=3, δf/δg=1일 때 w가 f에 미치는 영향을 값�
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우:3 
 - 현아:
 - 아영:
 - 승렬: 
@@ -113,7 +123,7 @@ learning rate가 0.1일때와 learning rate가 0.01일때의 그래프를 비교
 
 ### 풀이
 - 동건:
-- 정우: 
+- 정우: multiple run. write하는 부분에서 하나의 디렉토리안에 여러개의 디렉토리를 저장. 그리고 부모 디렉토리를 run한다 
 - 현아:
 - 아영:
 - 승렬:
@@ -127,7 +137,7 @@ learning rate가 0.1일때와 learning rate가 0.01일때의 그래프를 비교
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: K = tf.sigmoid(tf.matmul(X, W1) + b1), H = tf.sigmoid(tf.matmul(K, W2) + b2)
 - 현아:
 - 아영:
 - 승렬: 
@@ -138,7 +148,7 @@ back propagation을 간략히 서술하시오.
 
 ### 풀이
 - 동건:
-- 정우: 
+- 정우: 출력값과 실제값을 비교해서 거기에서나오는 cost를 뒤에서 부터 비교해서 영향(미분값을 계산하겠다.)
 - 현아:
 - 아영:
 - 승렬:
