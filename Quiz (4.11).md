@@ -28,18 +28,15 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 Layer가 3개이며, layer1은 2개를 입력받고, layer 2는 3개 입력, 1ayer 3은 4개를 입력받고 5개를 출력하는 NN을 코딩해보시오. (W1 = ~에서 시작해서,hypothesis = ~ 라인까지만 하시면 됩니다)
 
 ### 풀이
-- 동건:
+- 동건:  
 W1 = tf.Variable(tf.random_normal([2, 3]), name='weight1')
 b1 = tf.Variable(tf.random_normal([3]), name='bias1')
 layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
-
 W2 = tf.Variable(tf.random_normal([3, 4]), name='weight2')
 b2 = tf.Variable(tf.random_normal([4]), name='bias2')
 layer2 = tf.sigmoid(tf.matmul(layer1, W2) + b2)
-
 W3 = tf.Variable(tf.random_normal([4, 5]), name='weight3')
 b3 = tf.Variable(tf.random_normal([5]), name='bias3')
-
 hypothesis = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 - 정우: 
 - 현아: 
