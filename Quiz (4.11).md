@@ -6,7 +6,7 @@
 ### 풀이
 - 동건: 
 - 정우: 
-- 현아: 복잡한 문제의 경우 오차 역전파(back propagation)의 방법이 더 효율적이므로 (?)
+- 현아:
 - 아영:
 - 승렬:
 - 지원:
@@ -17,7 +17,7 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 ### 풀이
 - 동건:
 - 정우: 
-- 현아: 2x+2
+- 현아:
 - 아영:
 - 승렬:
 - 지원:
@@ -77,7 +77,7 @@ Neural Network가 deep하다 & wide하다는 것의 의미를 각각 서술하�
 ### 풀이
 - 동건: 
 - 정우: 
-- 현아: Wide Neural Network는 중간 layer에서 많은 입력값, 출력값을 활용하여 최종 y 추정값을 구해내는 것. Deep Neural Network는 layer를 많이 쌓는 것.
+- 현아: 
 - 아영:
 - 승렬: 
 - 지원:
@@ -102,7 +102,7 @@ g=wx, f=g+b이고 δg/δw=3, δf/δg=1일 때 w가 f에 미치는 영향을 값�
 ### 풀이
 - 동건: 
 - 정우: 
-- 현아: 3
+- 현아:
 - 아영:
 - 승렬: 
 - 지원:
@@ -127,7 +127,7 @@ learning rate가 0.1일때와 learning rate가 0.01일때의 그래프를 비교
 ### 풀이
 - 동건: 
 - 정우: 
-- 현아: K(X)는 layer1 = tf.sigmoid(tf.matmul(X, W1) + b1), H(X)는 hypothesis = tf.sigmoid(tf.matmul(layer1, W2) + b2)
+- 현아:
 - 아영:
 - 승렬: 
 - 지원:
@@ -138,7 +138,7 @@ back propagation을 간략히 서술하시오.
 ### 풀이
 - 동건:
 - 정우: 
-- 현아: back propagation이란 output에서 input으로의 방향(역방향)으로 오차(error)를 보내며 가중치를 업데이트하는 것을 말한다. (https://sacko.tistory.com/19)
+- 현아:
 - 아영:
 - 승렬:
 - 지원:
