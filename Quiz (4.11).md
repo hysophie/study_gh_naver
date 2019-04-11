@@ -30,17 +30,28 @@ Layer가 3개이며, layer1은 2개를 입력받고, layer 2는 3개 입력, 1ay
 ### 풀이
 - 동건: 
 - 정우: 
-- 현아: 
+- 현아:
+W1 = tf.Variable(tf.random_normal([2,3]), name = "weight1")
+b1 = tf.Variable(tf.random_normal([3]), name="bias1")
+layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([3,4]), name="weight2")
+b2 = tf.Variable(tf.random_normal([4]), name="bias2")
+layer2 = tf.sigmoid(tf.matmul(layer1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([4,5]), name="weight3")
+b3 = tf.Variable(tf.random_normal([5]), name="bias3")
+hypothesis = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 - 아영:
 - 승렬: 
 - 지원:
 
 ### 문제2
-F(X) = 3(2X + Y)^2을 X에대해 편미분해 보시오
+F(X) = 3(2X + Y)^2을 X에 대해 편미분해 보시오
 ### 풀이
 - 동건:
 - 정우: 
-- 현아:
+- 현아: 24
 - 아영:
 - 승렬:
 - 지원:
@@ -64,7 +75,7 @@ Tensorboard에서 learning rate를 다르게 한 두개 이상의 그래프를 �
 ### 풀이
 - 동건:
 - 정우: 
-- 현아:
+- 현아: 상위 디렉토리 안에 여러 개의 하위 디렉토리를 두고, 상위 디렉토리를 log 디렉토리로 주면 여러 개의 그래프가 함께 그려진다. 이런 방식으로 비교를 할 수 있다.
 - 아영:
 - 승렬:
 - 지원:
