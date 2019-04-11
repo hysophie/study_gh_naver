@@ -10,7 +10,7 @@
 - 승렬: 예측한 값과 실제값을 비교해 나온 에러로부터 앞의 Weight과 bias를 조정해 학습시키기 위해서
 - 아영:x1이 y(햇)에 미치는 영향을 알아야 W를 조절할 수 있는데 forward로는 계산량이 너무 많고 미분이 복잡해지기 때문에
 - 승렬:
-- 지원:
+- 지원: 각각의 변수가 결과값에 미치는 영향을 확인하기 위해
 
 ### 문제2
 f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
@@ -19,9 +19,9 @@ f(x) = x^2, g(x) = x+b 일때, x의 변화량에 대한 f(g(x))의 변화량은?
 - 동건: 2x+2b
 - 정우: 2(x+b) 
 - 현아:
+- 지원: 2x+b+1
 - 승렬: 2x
 - 아영:2x+2b
-- 지원:
 ---
 ## 정우
 
@@ -77,6 +77,19 @@ b3 = tf.Variable(tf.random_normal([5]), name='bias3')
 hypothesis = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 
 - 지원:
+W1=tf.Variable(tf.random_normal([2,3]), name=’weight1’)
+b1=tf.Variable(tf.random_normal([3]), name=’bias1’)
+layer1=tf.sigmoid(tf.matmul(X,W1)+b1)
+W2=tf.Variable(tf.random_normal([3,4]), name=’weight2’)
+b2=tf.Variable(tf.random_normal([4]), name=’bias2’)
+layer2=tf.sigmoid(tf.matmul(X,W2)+b2)
+W3=tf.Variable(tf.random_normal([4,5]), name=’weight3’)
+b3=tf.Variable(tf.random_normal([5]), name=’bias3’)
+layer3=tf.sigmoid(tf.matmul(X,W3)+b3)
+W4=tf.Variable(tf.random_normal([5,1]), name=’weight4’)
+b4=tf.Variable(tf.random_normal([1]), name=’bias4’)
+hypothesis=tf.sigmoid(tf.matmul(K,W3)+b3)
+
 
 ### 문제2
 F(X) = 3(2X + Y)^2을 X에대해 편미분해 보시오
@@ -84,9 +97,9 @@ F(X) = 3(2X + Y)^2을 X에대해 편미분해 보시오
 - 동건: 24x+12Y
 - 정우: 12(X+Y)
 - 현아:
+- 지원: 12(2x+y)
 - 승렬: 12(2X + Y)
 - 아영:24x+12y
-- 지원:
 ---
 
 ## 승렬
@@ -96,15 +109,14 @@ Find another W and b for the XOR. (lec9-1 11:43 그림 참조)
 
 ### 풀이
 - 동건: w1 = [5,5], w2 = [-5,-5], w3 = [-5,-5] // b1 = -6, b2 = 4, b3 = 4
-- 정우: 
+- 정우: w1 = [3,3] b1 = -5, w2 = [-8,-8] b2 = 6 w3 = [-5,-5], b3 = 3 
 - 현아: 
+- 지원: ([5/5],-8) / ([-7/-7],-3) / ([-11/-11],-6)
 - 승렬:  
 W1=[ 6, 6] , b1= -9      (1,1)일때만 1이도록  
 W2=[-6,-6] , b2= 2       (0,0)일때만 1이도록  
 W3=[-10,-10] , b3= 7     (0,0)일때만 1이도록  
-- 현아: w1 = [3,3] b1 = -5, w2 = [-8,-8] b2 = 6 w3 = [-5,-5], b3 = 3 
 - 아영:(w1=[4, 4], b1=-6) (w2=[-8, -8], b2=4), (w3=[-12, -12], b3=7)
-- 지원:
 
 ### 문제2
 Tensorboard에서 learning rate를 다르게 한 두개 이상의 그래프를 한번에 visualize 하기 위해서는 어떻게 해야 하는가?
@@ -126,11 +138,11 @@ Neural Network가 deep하다 & wide하다는 것의 의미를 각각 서술하�
 - 동건: deep은 layer의 수가 다수임을 뜻하고 wide는 한 layer의 node가 다수임을 뜻한다. 
 - 정우: WIDE: 출력값과 입력값, DEEP: 레이어의 개수
 - 현아: 
+- 지원: wide-output이 많은 것 / deep-layer가 많은 것
 - 승렬: Deep 하다: layer가 여러개이다.  
         wide 하다: 하나의 layer를 거친 후의 출력 값이 훨씬 많아진다.
 - 아영: wide하다-출력 값을 증가시켜 다음 layer의 입력값이 많아지도록 한다
 deep하다-layer이 많다
-- 지원:
 
 ### 문제2
 TensorBoard를 사용하는 5가지 단계에 대해 설명하시오.
@@ -152,12 +164,12 @@ TensorBoard를 사용하는 5가지 단계에 대해 설명하시오.
 4. summary를 실행시키고 기록
 5. tensorborad 실행
 - 승렬:
+- 지원: 1. 어떤 값에 log를 취할건지 정함 / 2. 한 번에 쓰기 위해 merge / 3. session에 들어가서 파일의 위치를 정하고 그래프를 넣음 / 4. summary(tensor) 실행하고 파일에 기록 / 5. tensorboard 실행
 1. 어떤 tensor를 log할건지 고르기
 2. summary 만들기
 3. 세션에 들어가서 어느 위치에 기록할 것인지 정한 다음에 세션에 그래프 넣어주기
 4. summary 실행시키고 writer에 넣어주기
 5. launch Tensorboard
-- 지원:
 ---
 
 ## 아영
@@ -169,9 +181,9 @@ g=wx, f=g+b이고 δg/δw=3, δf/δg=1일 때 w가 f에 미치는 영향을 값�
 - 동건: 3
 - 정우: 3 
 - 현아:
+- 지원: 3
 - 승렬: 3
 - 아영:3
-- 지원:
 
 ### 문제2
 learning rate가 0.1일때와 learning rate가 0.01일때의 그래프를 비교해서 보려고 한다. tensorboard를 사용해 어떻게 그래프를 구현할 수 있을까? (간단히 설명)
