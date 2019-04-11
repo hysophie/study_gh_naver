@@ -29,7 +29,17 @@ Layer가 3개이며, layer1은 2개를 입력받고, layer 2는 3개 입력, 1ay
 
 ### 풀이
 - 동건: 
-- 정우: 
+- 정우: W1 = tf.Variable(tf.random_normal([2,3]), name = 'weight1')
+b1 = tf.Variable(tf.random_normal([3]), name = 'bias1')
+layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([3,4]), name = 'weight1')
+b2 = tf.Variable(tf.random_normal([4]), name = 'bias1')
+layer2 = tf.sigmoid(tf.matmul(layer1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([4,5]), name = 'weight2')
+b3 = tf.Variable(tf.random_normal([5]), name = 'bias2')
+hypothesis = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 - 현아: 
 - 아영:
 - 승렬: 
